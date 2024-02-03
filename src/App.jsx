@@ -1,22 +1,21 @@
 // App.jsx
-import { createClient } from '@supabase/supabase-js';
-import TaskList from './components/TaskList';
-import TaskForm from './components/TaskForm';
-import './index.css';
-
-// Configurar el cliente Supabase
-const supabaseUrl = import.meta.env.VITE_REACT_APP_SUPABASE_URL;
-const supabaseKey = import.meta.env.VITE_REACT_APP_SUPABASE_ANON_KEY;
-const supabase = createClient(supabaseUrl, supabaseKey);
+import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Login from './pages/loginPage';
+import Success from './pages/successPage';
 
 const App = () => {
   return (
-    <div>
-      <h1>Task Manager</h1>
-      <TaskForm supabase={supabase} />
-      <TaskList supabase={supabase} />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/success" element={<Success />} />
+      </Routes>
+    </Router>
   );
 };
 
 export default App;
+
+

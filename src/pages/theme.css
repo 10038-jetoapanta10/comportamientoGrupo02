@@ -1,0 +1,11 @@
+.App {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilos para el encabezado */
+.App-header {
+  text-align: center;
+}
